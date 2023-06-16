@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+/**
+ * main -Main block
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	int i, j, k;
+
+	for (i = 0; i < 99; i++)
+	{
+
+		for (j = 0 ; j < 100; j++)
+		{
+			putchar(i / 10 + '0');
+			putchar(i % 10 + '0');
+			putchar(' ');
+			putchar(i / 10 + '0');
+			putchar(j % 10 + '0');
+			if (j != 98 && i == 99)
+			{
+				putchar(',');
+				putchar(' ');
+			}
+		}
+
+	}
+	putchar('\n');
+	return (0);
+
+}
