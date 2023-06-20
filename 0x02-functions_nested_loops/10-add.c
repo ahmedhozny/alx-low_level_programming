@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * main - Main block
- *
- * Return: Always 0.
+ * add - Adds two numbers and return the result
+ * @x: first integer to be added
+ * @y: second interger to be added
+ * Return: sum of x and y
  */
 int add(int x, int y)
 {

@@ -1,9 +1,8 @@
 #include "main.h"
 
 /**
- * main - Main block
- *
- * Return: Always 0.
+ * print_to_98 -Prints all natural numbers until 98 is reached
+ * @n: integer the itertions will start from
  */
 void print_to_98(int n)
 {

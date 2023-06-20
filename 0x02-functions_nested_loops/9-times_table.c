@@ -1,11 +1,9 @@
 #include "main.h"
 
 /**
- * main - Main block
- *
- * Return: Always 0.
+ * times_table -Prints the first 9 products of timetable from 0 to 9.
  */
-void jack_bauer(void);
+void times_table(void);
 {
 	int i, j, k;
 

@@ -1,9 +1,7 @@
 #include "main.h"
 
 /**
- * main - Main block
- *
- * Return: Always 0.
+ * print_alphabet_x10 -Print alphabets a to z 10 times
  */
 void print_alphabet_x10(void)
 {
