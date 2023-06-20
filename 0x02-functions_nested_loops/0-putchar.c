@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+ * main - Main block
+ *
+ * Return: Always 0.
+ */
 int main(void)
 {
 	_putchar('_');
