@@ -8,10 +8,11 @@ void _puts(char *s)
 {
 	int c = 0;
 
-	while (*s++)
+	while (*s)
 	{
 		putchar(*s);
 		c++;
+		s++;
 	}
 
 	putchar('\n');
