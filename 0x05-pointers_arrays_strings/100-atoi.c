@@ -17,17 +17,21 @@ int _atoi(char *s)
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[i] == '-' && !flag)
+		if (s[i] == '-' && !flag){
 			negative = -negative;
-		else if ((s[i] == '+' && !flag) || s[i] == ' ')
 			continue;
-		else if (s[i] < 48 || s[i] > 57)
-			return (negative * num);
-		else
-		{
-			num = num * 10 + (s[i] - '0');
-			flag = 1;
 		}
+
+		if ((s[i] == '+' && !flag) || s[i] == ' ')
+			continue;
+
+		if (s[i] < 48 || s[i] > 57){
+			if (!flag) continue;
+			break;
+		}
+
+		num = num * 10 + (s[i] - '0');
+		flag = 1;
 	}
 
 	return (negative * num);
