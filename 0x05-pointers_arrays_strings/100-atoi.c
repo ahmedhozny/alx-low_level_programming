@@ -17,7 +17,8 @@ int _atoi(char *s)
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[i] == '-' && !flag){
+		if (s[i] == '-' && !flag)
+		{
 			negative = -negative;
 			continue;
 		}
@@ -25,8 +26,10 @@ int _atoi(char *s)
 		if ((s[i] == '+' && !flag) || s[i] == ' ')
 			continue;
 
-		if (s[i] < 48 || s[i] > 57){
-			if (!flag) continue;
+		if (s[i] < 48 || s[i] > 57)
+		{
+			if (!flag)
+				continue;
 			break;
 		}
 
