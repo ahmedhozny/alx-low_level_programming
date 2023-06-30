@@ -19,7 +19,6 @@ char *cap_string(char *s)
 			flag = 0;
 			continue;
 		}
-
 		if ((s[i] >= 'a' && s[i] <= 'z') && flag)
 		{
 			flag = 0;
@@ -28,7 +27,6 @@ char *cap_string(char *s)
 		}
 
 		flag = 0;
-
 		for (j = 0; j < 12; j++)
 		{
 			if (s[i] == separators[j])
