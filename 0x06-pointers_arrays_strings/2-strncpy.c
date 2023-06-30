@@ -5,7 +5,6 @@
  * @dest: string to be appended
  * @src: string that will merge with @dest
  * @n: the length of string
- *
  * Return: pointer to @dest
  */
 char *_strncpy(char *dest, char *src, int n)

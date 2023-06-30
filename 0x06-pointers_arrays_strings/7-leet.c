@@ -3,7 +3,6 @@
 /**
  * leet -encodes string given so it would look like that "3nc0d3s s7ring"
  * @s: string to be encoded
- *
  * Return: pointer to @s
  */
 char *leet(char *s)
