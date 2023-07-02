@@ -8,7 +8,8 @@
  */
 char *cap_string(char *s)
 {
-	const char separators[] = {' ', '\n', '\t', ',', ';', '.', '!', '?', '\"', '(', ')', '{', '}'};
+	const char separators[] = {' ', '\n', '\t', ',', ';', '.',
+							   '!', '?', '\"', '(', ')', '{', '}'};
 	int i, j, flag;
 
 	flag = 1;
