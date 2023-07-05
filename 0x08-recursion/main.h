@@ -12,5 +12,7 @@ int _pow_recursion(int x, int y);
 int calc(int a, int b);
 int is_prime_number(int n);
 int calc_prime(int a, int b);
+int is_palindrome(char *s);
+int checks_palindrome(char *s1, char *s2);
 
 #endif
