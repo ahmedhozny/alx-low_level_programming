@@ -2,6 +2,6 @@
 #define HEADER_FILE
 
 int _putchar(char c);
-int parseInteger(char *s);
+int atoi(char *s);
 
 #endif

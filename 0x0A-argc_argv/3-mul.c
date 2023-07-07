@@ -17,8 +17,8 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	a = parseInteger(argv[1]);
-	b = parseInteger(argv[2]);
+	a = atoi(argv[1]);
+	b = atoi(argv[2]);
 	printf("%d\n", a * b);
 	return (0);
 }
