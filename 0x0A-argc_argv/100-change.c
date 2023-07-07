@@ -4,10 +4,10 @@
 #include <ctype.h>
 
 /**
- * main -prints all arguments it receives
+ * main -finds the number of coins needed for change
  * @argc: number of arguments
  * @argv: array of arguments
- * Return: Always 0 (Success)
+ * Return: 0 on success, 1 otherwise
  */
 int main(int argc, char **argv)
 {
@@ -46,4 +46,5 @@ int main(int argc, char **argv)
 	}
 
 	printf("%d\n", n);
+	return (0);
 }
