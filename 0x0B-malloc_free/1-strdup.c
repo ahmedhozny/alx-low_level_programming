@@ -3,7 +3,7 @@
 
 /**
  * _strdup -returns a pointer to a newly allocated space in memory,
- * 			which contains a copy of the string given as a parameter
+ *          which contains a copy of the string given as a parameter
  * @str: string to be copied
  * Return: Pointer to array if size > 0 and no errors caught, NULL otherwise.
  */
@@ -12,7 +12,9 @@ char *_strdup(char *str)
 	char *t;
 	int i, len;
 
-	for (len = 0; str[len] != '\0'; len++)
+	len = 0;
+	if (str != NULL)
+	for (; str[len] != '\0'; len++)
 		;
 
 	t = malloc((sizeof(char) * len) + 1);
