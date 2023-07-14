@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	result = *x * *y;
+	result = (*x * *y);
 
 	if (result == 0)
 	{
@@ -41,6 +41,7 @@ int main(int argc, char **argv)
 		return (0);
 	}
 
+	n = 0;
 	for (i = 0; argv[1][i]; i++)
 		n++;
 	for (i = 0; argv[2][i]; i++)
@@ -49,15 +50,12 @@ int main(int argc, char **argv)
 	p = malloc(sizeof(char) * (n + 1));
 	for (i = 0; result != 0; i++)
 	{
-		p[i] = (result % 10) + '0';
+		p[i] = ((result % 10) + '0');
 		result /= 10;
 	}
 
 	while (i)
-	{
 		_putchar(p[--i]);
-	}
-
 	_putchar('\n');
 
 	return (0);
@@ -71,9 +69,7 @@ void printError(void){
 	int i;
 
 	for (i = 0; error[i] != '\0'; i++)
-	{
 		_putchar(error[i]);
-	}
 }
 
 /**
@@ -83,7 +79,7 @@ void printError(void){
  */
 int isDigit(char c)
 {
-	return (c >= '0' && c <= '9');
+	return ((c >= '0') && (c <= '9'));
 }
 
 /**
@@ -106,7 +102,7 @@ unsigned int *parseNumber(char *s)
 			return (NULL);
 		}
 
-		*sum = (*sum * 10) + (s[i] - '0');
+		*sum = ((*sum * 10) + (s[i] - '0'));
 	}
 	return (sum);
 }
