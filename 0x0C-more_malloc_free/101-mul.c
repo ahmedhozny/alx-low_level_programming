@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include "main.h"
 
 /**
  * main -multiplies two positive numbers
@@ -17,14 +18,14 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	x = atoi(argv[1]);
+	x = parseNumber(argv[1]);
 	if (x == NULL)
 	{
 		printError();
 		exit(98);
 	}
 
-	y = atoi(argv[2]);
+	y = parseNumber(argv[2]);
 	if (y == NULL)
 	{
 		printError();
@@ -58,6 +59,8 @@ int main(int argc, char **argv)
 	}
 
 	_putchar('\n');
+
+	return (0);
 }
 
 /**
@@ -84,20 +87,22 @@ int isDigit(char c)
 }
 
 /**
- * atoi -Returns numeric value of string
+ * parseNumber -Returns numeric value of string
  * @s: string to be parsed
  * Return: integer of string given
  */
-unsigned int *atoi(char *s)
+unsigned int *parseNumber(char *s)
 {
 	unsigned int *sum, i;
 
-	*sum = 0;
+	sum = malloc(sizeof(unsigned int));
 
+	*sum = 0;
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (!isDigit(s[i]))
 		{
+			free(sum);
 			return (NULL);
 		}
 

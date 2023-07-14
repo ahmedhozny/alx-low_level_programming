@@ -10,6 +10,6 @@ char _putchar(char c);
 int main(int argc, char **argv);
 void printError(void);
 int isDigit(char c);
-unsigned int *atoi(char *s);
+unsigned int *parseNumber(char *s);
 
 #endif
