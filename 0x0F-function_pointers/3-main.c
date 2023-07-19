@@ -4,12 +4,12 @@
 /**
  * main - Main block
  * @argc: number of arguments
- * @argv: arguments
+ * @argv: arguments passed
  * Return: Always 0
  */
 int main(int argc, char **argv)
 {
-	char *e = "Error\n", *o;
+	char *o, *e = "Error\n";
 	int a, b;
 
 	if (argc != 4)
@@ -28,12 +28,12 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 
-	if (((o[0] == '/') || (o[0] == '%')) && b == 0)
+	if (((o[0] == '/') || (o[0] == '%')) && (b == 0))
 	{
 		printf("%s",e);
 		exit(100);
 	}
 
-	printf("%d", get_op_func(o)(a, b));
+	printf("%d\n", get_op_func(o)(a, b));
 	return (0);
 }
