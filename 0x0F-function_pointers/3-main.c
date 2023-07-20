@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 
 	if (argc != 4)
 	{
-		printf("%s",e);
+		printf("%s", e);
 		exit(98);
 	}
 
@@ -24,13 +24,13 @@ int main(int argc, char **argv)
 
 	if (!get_op_func(o) || (o[1] != '\0'))
 	{
-		printf("%s",e);
+		printf("%s", e);
 		exit(99);
 	}
 
 	if (((o[0] == '/') || (o[0] == '%')) && (b == 0))
 	{
-		printf("%s",e);
+		printf("%s", e);
 		exit(100);
 	}
 
