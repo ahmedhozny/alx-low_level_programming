@@ -5,12 +5,12 @@
  * @n: number
  * @index: index of a bit
  *
- * Return: bit according to needle given, -1 on error
+ * Return: bit value according to index given, -1 on error
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
 	if (index >= (sizeof(unsigned long int) * 8))
 		return (-1);
 
-	return (n & (1 << index));
+	return (n & (1l << index));
 }
