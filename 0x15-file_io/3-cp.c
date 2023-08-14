@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 /**
  * validate97 - Validates number of arguments and exits if mismatched
@@ -10,7 +11,7 @@ void validate97(int argc)
 {
 	if (argc != 3)
 	{
-		printf("Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(98);
 	}
 }
@@ -24,7 +25,7 @@ void validate98(char *filename, ssize_t n)
 {
 	if (n == -1)
 	{
-		printf("Error: Can't read from file %s\n", filename);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
 		exit(98);
 	}
 }
@@ -38,7 +39,7 @@ void validate99(char *filename, ssize_t n)
 {
 	if (n == -1)
 	{
-		printf("Error: Can't write to %s\n", filename);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
 		exit(99);
 	}
 }
@@ -52,7 +53,7 @@ void validate100(ssize_t n, int fd)
 {
 	if (n == -1)
 	{
-		printf("Error: Can't close fd %d\n", fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
 }
@@ -76,8 +77,7 @@ int main(int argc, char *argv[])
 	validate98(argv[1], file_from);
 	file_to = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, file_perm);
 	validate99(argv[2], file_to);
-	do
-	{
+	do {
 		lenr = read(file_from, c, 1024);
 		validate98(argv[1], lenr);
 		lenw = write(file_to, c, lenr);
