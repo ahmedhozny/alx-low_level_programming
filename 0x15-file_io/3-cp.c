@@ -72,16 +72,16 @@ int main(int argc, char *argv[])
 	mode_t file_perm = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	validate97(argc);
-	file_from = open(argv[0], O_RDONLY);
-	validate98(argv[0], file_from);
-	file_to = open(argv[1], O_CREAT | O_TRUNC | O_WRONLY, file_perm);
-	validate99(argv[1], file_to);
+	file_from = open(argv[1], O_RDONLY);
+	validate98(argv[1], file_from);
+	file_to = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, file_perm);
+	validate99(argv[2], file_to);
 	do
 	{
 		lenr = read(file_from, c, 1024);
-		validate98(argv[0], lenr);
+		validate98(argv[1], lenr);
 		lenw = write(file_to, c, lenr);
-		validate99(argv[1], (lenr != lenw) ? -1 : lenw);
+		validate99(argv[2], (lenr != lenw) ? -1 : lenw);
 	} while (lenr == 1024);
 	validate100(close(file_from), file_from);
 	validate100(close(file_to), file_to);
