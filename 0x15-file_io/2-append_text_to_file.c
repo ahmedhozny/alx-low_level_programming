@@ -2,21 +2,19 @@
 #include <stdlib.h>
 
 /**
- * create_file - Creates a file and puts content into it
+ * append_text_to_file - Appends text to a file
  * @filename: file location
  * @text_content : content to be written
  *
  * Return: actual number of letters it could read and print
  */
-int create_file(const char *filename, char *text_content)
+int append_text_to_file(const char *filename, char *text_content)
 {
 	ssize_t n_o, n_w;
 	int len = 0;
 
 	if (filename == NULL)
-	{
 		return (-1);
-	}
 
 	if (text_content != NULL)
 	{
@@ -24,7 +22,7 @@ int create_file(const char *filename, char *text_content)
 			len++;
 	}
 
-	n_o = open(filename, O_CREAT | O_TRUNC | O_RDWR, 600);
+	n_o = open(filename, O_WRONLY | O_APPEND);
 	if (n_o == -1)
 		return (-1);
 
@@ -34,4 +32,5 @@ int create_file(const char *filename, char *text_content)
 
 	close(n_o);
 	return (1);
+
 }
