@@ -69,11 +69,12 @@ int main(int argc, char *argv[])
 	ssize_t file_from, file_to;
 	int lenr, lenw;
 	char c[1024];
+	mode_t file_perm = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	validate97(argc);
 	file_from = open(argv[0], O_RDONLY);
 	validate98(argv[0], file_from);
-	file_to = open(argv[1], O_CREAT | O_TRUNC | O_WRONLY);
+	file_to = open(argv[1], O_CREAT | O_TRUNC | O_WRONLY, file_perm);
 	validate99(argv[1], file_to);
 	do
 	{
