@@ -8,7 +8,5 @@ clean:
 	$(RM) *~ $(NAME)
 oclean:
 	$(RM) $(OBJ)
-fclean:
-	clean oclean
-re:
-	fclean all
+fclean: clean oclean
+re: fclean all
